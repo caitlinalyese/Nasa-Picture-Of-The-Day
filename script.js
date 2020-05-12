@@ -1,6 +1,15 @@
 
-let request = new XMLHttpRequest();
-request.open("GET","https://api.nasa.gov/planetary/apod?api_key=NSUxnU2Qg4VnRFx8gpkM1YyQvG95vUuHKzTueQEp");
+fetch(
+  "https://api.nasa.gov/planetary/apod?api_key=NSUxnU2Qg4VnRFx8gpkM1YyQvG95vUuHKzTueQEp"
+)
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    return response.json();
+  })
+
+
 
 request.onload = function(){
     const response = JSON.parse(request.response);
