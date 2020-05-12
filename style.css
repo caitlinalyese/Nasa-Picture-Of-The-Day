@@ -1,8 +1,23 @@
 
 html, body {
-    height: 100%
+    height: 100%;
+}
+
+body {
+    background-color: fuchsia;
+    background-size: cover;
 }
 
 h1 {
     font-size: larger;
+}
+
+img {
+    display: block;
+    margin: auto;
+}
+
+ p {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
 }

@@ -9,15 +9,12 @@ fetch(
     return response.json();
   })
 
-
-
-request.onload = function(){
-    const response = JSON.parse(request.response);
-    document.querySelector("#title").textContent = response.title;
-    document.querySelector("#date").textContent = response.date;
-    document.querySelector("#pic").src = response.hdurl;
-    document.querySelector("#explanation").textContent = response.explanation;
-    document.querySelector("#copyright").textContent= response.copyright;
-  };
-
-request.send();
+    .then (data => {
+    document.querySelector("#title").textContent = data.title;
+    document.querySelector("#date").textContent = data.date;
+    document.querySelector("#pic").src = data.hdurl;
+    document.querySelector("#explanation").textContent = data.explanation;
+    document.querySelector("#copyright").textContent= data.copyright
+    });
+  
+    
